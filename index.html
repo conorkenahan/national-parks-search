@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>National Park Search</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <header>
+     <h1>National Park Search</h1>
+    </header>
+  
+  
+  <form id="submit">
+    <label for="stateName">State Initials</label>
+    <input type="text" id="stateNameID" placeholder="e.g., NY, CA, FL" required>
+    <br>
+    <label for="maxResults">Max Results</label>
+    <input type="number" value="10" id="maxResultsID" required>
+    <br>
+    <input type="submit">
+  </form>
+  
+  <p id="error"></p>
+
+  <section id="results" class="hidden">
+    <div id="loading"></div>
+    <ul id="resultsList">
+    </ul>
+  </section>
+  
+  
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
