@@ -11,13 +11,12 @@ function formatQueryParams(params){
 function displayResults(responseJson){
   console.log(responseJson);
   $('#loading').empty();
-  $('#resultsList').empty();
   $('#results').removeClass('hidden');
   for (let i = 0; i < responseJson.data.length; i++){
     $('#resultsList').append(
       `<li><h2>${responseJson.data[i].name}</h2>
       <p>${responseJson.data[i].description}</p>
-      <a href="${responseJson.data[i].url}">${responseJson.data[i].name}</a>
+      <a href="${responseJson.data[i].url}">Website</a>
       </li>`
     )};
 }
@@ -51,6 +50,7 @@ function watchForm(){
     event.preventDefault();
     const stateName = $('#stateNameID').val();
     const maxResults = $('#maxResultsID').val();
+    $('#resultsList').empty();
     $('#loading').html("Loading...");
     getResults(stateName, maxResults);
   });
